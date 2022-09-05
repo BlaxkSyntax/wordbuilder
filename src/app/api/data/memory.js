@@ -1,41 +1,18 @@
 const bodyParser = require('body-parser');
 
-let listOfPlayers = [];
-let listOfChar = [];
-let listOfMatchings = [];
+let code = [];
 
 class Memory {
 
-    addPlayer(player){
-        listOfPlayers.push(player);
+    generateCode(){
+        for (let index = 0; code.length < 4; index++) {
+            code.push(Math.floor(Math.random() * 9) + 1);
+            console.log(code);
+        }
     }
 
-    getPlayerName(player){
-        return listOfPlayers.includes(player);
-    }
-
-    getAllPlayers(){
-        return listOfPlayers;
-    }
-
-    addChar(char){
-        listOfChar.push(char);
-    }
-
-    getChar(){
-        return "Z";
-    }
-
-    getAllChar(){
-        return listOfChar;
-    }
-
-    addMatching(matching){
-        listOfMatchings.push(matching);
-    }
-
-    get(matching){
-        return listOfMatchings.find(player);
+    getCode(){
+        return code;
     }
 
 }
