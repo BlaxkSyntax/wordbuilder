@@ -7,31 +7,8 @@ let char = new Char();
 class ServerRoutes {
 
     constructor(server) {
-        this.addPlayer(server);
-        this.getPlayer(server);
         this.spin(server);
         this.getspin(server);
-    }
-
-    addPlayer(server){
-        server.post('/player', function (req, res) {
-            const name = req.body.name;
-            res.json(player.addPlayer(name));
-        })
-    }
-
-    getPlayer(server){
-        server.get('/player/:name', function (req, res) {
-            const name = req.params.name;
-            res.json(player.getPlayer(name));
-        })
-    }
-
-    spin(server){
-        server.post('/spin', function (req, res) {
-            const spinchar = req.body.spinchar;
-            res.json(char.addChar(spinchar));
-        })
     }
 
     getspin(server){
@@ -43,13 +20,13 @@ class ServerRoutes {
 
     words(server){
         server.post('/words', function (req, res) {
-            const playword = req.body.spinchar;
+            const playword = req.body;
             res.json(words.addWords(playword));
         })
     }
 
     getWords(server){
-        server.get('/words/', function (req, res) {
+        server.get('/words', function (req, res) {
             const playword = req.params.char;
             res.json(words.getWords(playword));
         })
