@@ -1,12 +1,11 @@
 
-class Config {
+class Words {
 
     addWords(){
         return "add"
     }
 
     getWords(){
-        
         return "name"
     }
 

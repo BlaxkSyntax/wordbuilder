@@ -1,14 +1,17 @@
 const bodyParser = require('body-parser');
 const Player = require('../../api/controllers/addplayer');
 const Char = require('../../api/controllers/char');
+const Words = require('../../api/controllers/words');
 let player = new Player();
 let char = new Char();
+let words = new Words();
 
 class ServerRoutes {
 
     constructor(server) {
-        this.spin(server);
         this.getspin(server);
+        this.words(server);
+        this.getWords(server);
     }
 
     getspin(server){
@@ -21,13 +24,13 @@ class ServerRoutes {
     words(server){
         server.post('/words', function (req, res) {
             const playword = req.body;
+            console.log(playword);
             res.json(words.addWords(playword));
         })
     }
 
     getWords(server){
         server.get('/words', function (req, res) {
-            const playword = req.params.char;
             res.json(words.getWords(playword));
         })
     }
