@@ -35,9 +35,9 @@ class ServerRoutes {
     }
 
     getspin(server){
-        server.get('/spin/:char', function (req, res) {
-            const spinchar = req.params.char;
-            res.json(char.getChar(spinchar));
+        server.get('/char', function (req, res) {
+            const spinchar = req.body.char;
+            res.json(char.getChar());
         })
     }
 

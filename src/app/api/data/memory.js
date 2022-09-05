@@ -22,8 +22,8 @@ class Memory {
         listOfChar.push(char);
     }
 
-    getChar(char){
-        return listOfChar.includes(char);
+    getChar(){
+        return "Z";
     }
 
     getAllChar(){
