@@ -9,6 +9,7 @@ class ServerRoutes {
 
     code(server){
         server.post('/code', function (req, res) {
+            console.log(req.body);
             res.json(codeToBreak.break(Array.from(String(req.body.code), Number)));
         })
     }
